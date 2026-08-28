@@ -33,9 +33,20 @@ namespace project_1
                 string input = Console.ReadLine();
                 if (input == "회복")
                 {
-                    int healAmount = player.heal();
-                    player.HP += healAmount;
-                    Console.WriteLine($"플레이어가 {healAmount} 만큼 회복했습니다.\n플레이어의 체력: {player.HP}");
+                    Random healRand = new Random();
+                    int critical = healRand.Next(0, 10);
+                    if (critical >= 7)
+                    {
+                        int criticalHeal = player.heal() * 2;
+                        player.HP += criticalHeal;
+                        Console.WriteLine($"플레이어가 {criticalHeal} 만큼 크게 회복했습니다.\n플레이어의 체력: {player.HP}");
+                    }
+                    else
+                    {
+                        int healAmount = player.heal();
+                        player.HP += healAmount;
+                        Console.WriteLine($"플레이어가 {healAmount} 만큼 회복했습니다.\n플레이어의 체력: {player.HP}");
+                    }
                 }
                 else if (input == "공격")
                 {
