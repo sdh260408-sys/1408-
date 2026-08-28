@@ -35,7 +35,7 @@ namespace project_1
                 {
                     Random healRand = new Random();
                     int critical = healRand.Next(0, 10);
-                    if (critical >= 7)
+                    if (critical >= 5)
                     {
                         int criticalHeal = player.heal() * 2;
                         player.HP += criticalHeal;
