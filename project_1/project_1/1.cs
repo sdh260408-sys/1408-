@@ -21,8 +21,6 @@ namespace project_1
         }
         public class Player : Character
         {
-            private Random rand = new Random();
-
             public void Heal()
             {
                 int critical = rand.Next(0, 10);
