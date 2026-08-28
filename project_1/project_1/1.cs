@@ -7,14 +7,14 @@ namespace project_1
         public class Character
         {
             public int HP = 100;
-            protected Random rand = new Random();   // private → protected로 (자식이 쓸 수 있게)
+            protected Random rand = new Random();
 
             public virtual int Attack()
             {
                 return rand.Next(5, 15);
             }
 
-            public void TakeDamage(int amount)   // "데미지 받기"도 캐릭터의 행동으로 만듦
+            public void TakeDamage(int amount)
             {
                 HP -= amount;
             }
